@@ -1,41 +1,34 @@
-# Autofill Lite
+# Autofill Lite source archive
 
-Autofill Lite is a local-first Electron helper for reviewing and assisting with recruitment-form data entry. It fills only the current page from a local profile library; final save, submission, declarations and privacy-consent actions always remain manual.
+Autofill Lite is a local-first Electron helper for reviewing and assisting with recruitment-form data entry. It uses a local profile library; final save, submission, declarations and privacy-consent actions remain manual.
 
-## What is included
+## Download
 
-- `autofill-plugin/`: browser-side matching, form control adapters, repeat-record workflows and site rules.
-- `profile-adapter.js` and `profile-editor.*`: local profile normalization and editing UI.
-- `bookmarks.*`: local job-URL library.
-- `ai-*.js`, `form-graph.js`, `record-graph.js` and related modules: privacy-bounded site analysis and conservative runtime candidates.
-- `tests/`: unit and fixture coverage for core behaviors and verified regression paths.
-- `docs/`: code provenance, change record and publishing/privacy boundary.
+The complete privacy-screened source snapshot is available as [autofill-lite-source-public.zip](autofill-lite-source-public.zip). It contains 247 source, fixture, test and documentation files while preserving the original directory structure.
 
-## What is intentionally excluded
+## Included capabilities
 
-This repository contains no personal profile database, browser cookies, session data, API keys, executable installer, Electron runtime, `node_modules`, generated diagnostics, backups or original local build notes. The `defaults/` directory only holds structure-only examples.
+- Browser-side field matching, form-control adapters and repeat-record workflows.
+- Local profile normalization, profile editing and local job-URL bookmarks.
+- Conservative site analysis, runtime semantic candidates and resumable checkpoints.
+- Unit and fixture coverage for core and verified regression paths.
 
-## Local setup
+## Excluded from this public archive
 
-1. Install a compatible Electron/Node development environment.
-2. Install the dependencies declared by `package.json`.
-3. Copy the sample profile structure from `defaults/` into the application's local data directory and fill it locally. Do not commit that data directory.
-4. Start the Electron application using the project's local development command.
-
-The distributed portable application is deliberately not tracked here. Build it locally after reviewing the source and licensing status.
+No completed profile, browser cookie/session, API key, executable, Electron runtime, dependency directory, backup or diagnostic output is included. Sample profile files are structure-only.
 
 ## Safety boundary
 
 - No final form save or submission is automated.
 - Consent, privacy, declaration and sensitive prompts are excluded from automatic filling.
 - Unknown or ambiguous fields remain for review instead of being guessed.
-- Site analysis packets must not contain current field values, query strings, cookies, tokens, sessions or profile values.
 
-## Code provenance
+## Provenance and publication notice
 
-This project began from a local `laoli-job-app` baseline. Exact reuse, adapted modules and project additions are documented in [docs/CODE_PROVENANCE.md](docs/CODE_PROVENANCE.md). The baseline's external licensing status was not established during this local comparison; this repository is therefore prepared as a **private source archive** pending a separate licensing review before any public distribution.
+This project began from a local `laoli-job-app` baseline. The comparison identifies 53 byte-identical reused files, 23 adapted baseline files and 237 Autofill Lite additions. See [CODE_PROVENANCE.md](CODE_PROVENANCE.md), [CHANGELOG.md](CHANGELOG.md), [PRIVACY_AND_PUBLISHING.md](PRIVACY_AND_PUBLISHING.md) and [NOTICE.md](NOTICE.md).
+
+The inherited baseline's external licence was not established during the local comparison. This public source archive is shared as a documented engineering record, not as a claim that all inherited code is independently licensable for redistribution. Review the applicable permissions before reuse or republication.
 
 ## Verification snapshot
 
-The source's latest included build report records 62/62 regression checks passing for its local source snapshot. This GitHub preparation changes documentation and removes personal/local-data material; it does not claim a fresh runtime verification of every recruitment site.
-
+Before publication, all 224 JavaScript files passed syntax validation and all 122 included unit/fixture tests passed. This is not a claim of fresh live-site verification for every recruitment form.
